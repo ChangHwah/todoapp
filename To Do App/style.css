@@ -60,4 +60,49 @@ body {
 #tasks {
     background-color: #ffffff;
     position: relative;
+    padding: 1.8em 1.25em;
+    margin-top: 3.8em;
+    width: 100%;
+    box-sizing: 0 1.25em 1.8em rgba (1, 24, 48, 0.15);
+    border-radius: 0.6em;
+}
+
+.task {
+    background-color: white;
+    padding: 0.3em 0.6em;
+    margin-top: 0.6em;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #d1d3d4;
+    cursor: pointer;
+}
+
+.task span {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+.task button {
+    color: white;
+    padding: 0.8em 0;
+    width: 2.8em;
+    border-radius: 0.3em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.delete {
+    background-color: #fb3b3b;
+}
+
+.edit {
+    background-color: #0b87ff;
+    margin-left: auto;
+    margin-right: 3em;
+}
+
+.completed {
+    text-decoration: line-through;
 }

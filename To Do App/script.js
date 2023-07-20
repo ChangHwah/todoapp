@@ -30,9 +30,9 @@ const displayTasks = () => {
     for(let key of sortedTasks) {
         // let classValue = "";
         // Get all values
-        console.log(localStorage.getItem(key))
+        // console.log(localStorage.getItem(key))
         let value = localStorage.getItem(key);
-        console.log(value)
+        // console.log(value)
         let taskInnerDiv = document.createElement("div");
         taskInnerDiv.classList.add("task");
         taskInnerDiv.setAttribute("id", key);
@@ -41,7 +41,7 @@ const displayTasks = () => {
         let editButton = document.createElement("button");
         editButton.classList.add("edit");
         editButton.innerHTML = `<i class="fa-solid fa-pen-to-square"></i>`;
-        console.log(taskInnerDiv)
+        // console.log(taskInnerDiv)
 
         if(!JSON.parse(value)){
             editButton.style.visibility = "visible";
@@ -53,6 +53,19 @@ const displayTasks = () => {
         taskInnerDiv.innerHTML += `<i class="fa-solid fa-trash"></i>`;
         tasksDiv.appendChild(taskInnerDiv);
     }
+
+    // Tasks completed
+    tasks = document.querySelectorAll(".task");
+    tasks.forEach((element, index) => {
+        element.onclick = () => {
+            //local storage update
+            if (element.classList.contains("completed")) {
+                updateStorage(element.id.split("_")[0], element.innerText, false);
+            } else {
+                updateStorage(element.id.split("_")[0], element.innerText, true);
+            }
+        }
+    })
 };
 
 // Disable edit button
